@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("build Kenobi") {
+            steps {
+                echo "Hello there"
+                sleep(100)
+            }
+        }
+        stage("build Grievous") {
+            steps {
+                echo "General Kenobi"
+            }
+        }
+    }
+}

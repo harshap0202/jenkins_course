@@ -1,0 +1,15 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage("function test") {
+            steps {
+                customFunc("String data from a function")
+            }
+        }
+    }
+}
+
+def customFunc(String textData) {
+    echo "Data from the function 'customFunc': \n ${textData}"
+} 

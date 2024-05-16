@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    parameters {
+        booleanParam(defaultValue: false, description: "Click to set value true", name: "myBool")
+    }
+
+    stages {
+        stage("Build 1") {
+            steps {
+                echo "Boolean value is set to ${params.myBool}"
+            }
+        }
+    }
+}

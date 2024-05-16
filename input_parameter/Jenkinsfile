@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(defaultValue: "test", description: "Enter a task", name: "taskName")
+    }
+
+    stages {
+        stage("enter name") {
+            steps {
+                echo "Task entered is ${params.taskName}"
+            }
+        }
+    }
+}

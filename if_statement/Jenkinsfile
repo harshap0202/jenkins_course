@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    parameters {
+        choice(choices: ['Create Instance', 'Start Instance', 'Stop Instance '], description: "select a task", name: "choiceAns")
+    }
+
+    stages {
+        stage("if statement") {
+            steps {
+                script {
+                    if(params.choiceAns == "Create Instance") {
+                        echo "Instance is being created"
+                        currentBuild.result = "SUCCESS"
+                        return 
+                    }
+                    else if(params.choiceAns == "Start Instance") {
+                        echo "Starting existing instance"
+                        currentBuild.result = "SUCCESS"
+                        return 
+                    }
+                    else if(params.choiceAns == "Stop Instance") {
+                        echo "Instance Stopped"
+                        currentBuild.result = "SUCCESS"
+                        return 
+                    }
+                    else {
+                        echo "nothing selected."
+                    }
+                }
+            }
+        }
+    }
+}

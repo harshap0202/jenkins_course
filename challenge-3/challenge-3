@@ -1,0 +1,8 @@
+Challenge 3 
+1)Create a new pipeline called: challenge3 
+2)Add 3 parameters: 
+	-Get input for our custom deployment name 
+	-Select which AZ to deploy to: EU-WEST-2A, EU-WEST-2B, EU-WEST-2C 
+	-Checkbox to confirm deployment 
+3) Check it runs and works 
+

@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    parameters {
+        choice(choices: ['Build 1', 'Build 2', 'Build 3', 'Build 4'], description: "Select a build to deploy", name: "userChoice")
+    }
+
+    stages {
+        stage("Select Build") {
+            steps {
+                echo "Build selected for deployment is ${params.userChoice}"
+            }
+        }
+    }
+}
